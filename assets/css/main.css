@@ -5,6 +5,7 @@
     --color-main-2: #F5AF31;  
 
     --color-main-secondary: #2F2F2F;  
+    --color-text-shadow:var(--color-main);
     
     --color-white : #ffffff;
 }
@@ -14,6 +15,7 @@ body{
     background-color: var(--color-main);
 
     font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px var(--color-text-shadow);
 }
 
 p{
@@ -29,6 +31,20 @@ p{
     /* letter-spacing: 2px; */
     line-height: 2rem;
 }
+
+.masthead .img-masterhead{
+    position: relative; 
+    width: 300px; 
+    height: auto; 
+    left: -160px;
+}
+
+/* @media (max-width: 320px){
+    .masthead .img-masterhead{
+        width: 200px; 
+        left: -100px;
+    }
+} */
 
 .bg-main-2{
     background-color: var(--color-main-2);
