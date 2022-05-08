@@ -15,7 +15,7 @@ body{
     background-color: var(--color-main);
 
     font-family: 'Poppins', sans-serif;
-    text-shadow: 2px 2px var(--color-text-shadow);
+    /* text-shadow: 2px 2px var(--color-text-shadow); */
 }
 
 p{
@@ -62,5 +62,8 @@ p{
 }
 
 .page-about{
+    background-color: var(--color-main-secondary);
+}
+.page-services{
     background-color: var(--color-main-secondary);
 }
