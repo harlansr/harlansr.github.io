@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
 :root {
     --color-main: #2A2A2A;  
     --color-main-2: #F5AF31;  
@@ -8,6 +10,9 @@
     --color-text-shadow:var(--color-main);
     
     --color-white : #ffffff;
+
+    --color-card : #3f3f3f;
+    --color-card-hover : #383838;
 }
 
 body{
@@ -37,13 +42,13 @@ p{
 }
 
 .masthead .img-masterhead{
-    position: relative; 
-    width: 300px; 
-    height: auto; 
-    left: -160px;
+    /* position: relative;  */
+    /* left: -160px; */
+    width: auto;
+    height: 100%; 
 }
 
-/* @media (max-width: 320px){
+/* @media (max-width: 480px){
     .masthead .img-masterhead{
         width: 200px; 
         left: -100px;
@@ -67,6 +72,14 @@ p{
     color: var(--color-main);
     background-color: var(--color-main-2);
 }
+.btn-outline-main{
+    color: var(--color-main-2);
+    border-color: var(--color-main-2);
+}
+.btn-outline-main:hover{
+    color: var(--color-main);
+    background-color: var(--color-main-2);
+}
 
 .page-about{
     background-color: var(--color-main-secondary);
@@ -74,11 +87,25 @@ p{
 .page-services{
     background-color: var(--color-main-secondary);
 }
+.page-portfolio{
+    background-color: var(--color-main-secondary);
+}
 
 .bg-main-secondary{
     background-color: var(--color-main-secondary);
 }
 
+.bg-card{
+    color: white;
+    background-color: var(--color-card);
+    border-color: var(--color-card);
+}
+
+.bg-card:hover{
+    color: white;
+    background-color: var(--color-card-hover);
+    border-color: var(--color-card-hover);
+}
 
 
 
