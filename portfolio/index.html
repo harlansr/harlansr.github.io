@@ -35,10 +35,11 @@
 .sidebar a, .sidebar button{
     color: white;
 }
-          /* body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-} */
+body {
+    position: relative;
+  /* min-height: 100vh;
+  min-height: -webkit-fill-available; */
+}
 
 /* html {
   height: -webkit-fill-available;
@@ -121,9 +122,10 @@ main {
     background-color: #4b4b4b;
 }
 
-/* .scrollarea {
-  overflow-y: auto;
-} */
+.scrollarea {
+  /* overflow-y: auto; */
+  overflow-y: scroll;
+}
 
 .fw-semibold { font-weight: 600; }
 /* .lh-tight { line-height: 1.25; } */
@@ -147,293 +149,343 @@ main {
         </div>
     </header> -->
       
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
-          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
-            <div class="flex-shrink-0 ">
-                <a href="/" class="d-flex align-items-center pb-2 mb-2 link-dark text-decoration-none border-bottom">
-                  <!-- <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg> -->
-                  <span class="fs-5 fw-semibold text-center">My Portfolio</span>
-                </a>
-                <ul class="list-unstyled">
-                  <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                      Program
-                    </button>
-                    <div class="collapse show" id="home-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#website" class="link-dark rounded">Website</a></li>
-                        <li><a href="#android" class="link-dark rounded">Android</a></li>
-                        <li><a href="#ai" class="link-dark rounded">Artificial Intelligence</a></li>
-                        <li><a href="#game" class="link-dark rounded">Game</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                      Design
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#3d_design" class="link-dark rounded">3D Design</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  
-                  <!-- <li class="border-top my-3"></li>
-                  <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                      Account
-                    </button>
-                    <div class="collapse" id="account-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">New...</a></li>
-                        <li><a href="#" class="link-dark rounded">Profile</a></li>
-                        <li><a href="#" class="link-dark rounded">Settings</a></li>
-                        <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                      </ul>
-                    </div>
-                  </li> -->
-                </ul>
-              </div>
-          </nav>
-      
-          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-0">
-              <div class="col-12">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div id="list-example" class="flex-shrink-0 ">
+                    <a href="/" class="d-flex align-items-center pb-2 mb-2 link-dark text-decoration-none border-bottom">
+                    <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+                    <span class="fs-5 fw-semibold text-center">My Portfolio</span>
+                    </a>
+                    <ul class="list-unstyled ">
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                        Program
+                        </button>
+                        <div class="collapse show" id="home-collapse">
+                        <ul class="list-group btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#website" class="nav-item link-dark rounded">Website</a></li>
+                            <li><a href="#android" class="nav-item link-dark rounded">Android</a></li>
+                            <li><a href="#ai" class="link-dark rounded">Artificial Intelligence</a></li>
+                            <li><a href="#game" class="link-dark rounded">Game</a></li>
+                        </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                        Design
+                        </button>
+                        <div class="collapse" id="dashboard-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#2d_design" class="link-dark rounded">2D Design</a></li>
+                            <li><a href="#3d_design" class="link-dark rounded">3D Design</a></li>
+                            <li><a href="#uiux" class="link-dark rounded">UI/UX Design</a></li>
+                        </ul>
+                        </div>
+                    </li>
+                    
+                    </ul>
+                </div>
 
+                <!-- <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#website">Item 1</a>
+                    <a class="list-group-item list-group-item-action" href="#android">Item 2</a>
+                    <a class="list-group-item list-group-item-action" href="#ai">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#game">Item 4</a>
+                </div> -->
+            </nav>
+        
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-0">
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
 
-                <section class="page-website bg-main-secondary" id="website" >
-                    <div class="container p-5" >
-                      <div class="row justify-content-md-center" >
-                        <div class="col-12 text-center mb-5 mt-3">
-                          <h5 class="text-main-2">Full Stack Web Developer</h5>
-                          <h2 class="">WEBSITE DEVELOP</h2>
-                          <hr>
-                        </div>
-            
-                        <div class="col-12 mb-5">
-                            <div class="row">
-            
-                                <div class="col-5">
-                                    <img src="/assets/img/portfolio/website/web_keuangan.png" alt="" class="img-normal">
+                    <section class="page-website bg-main-secondary" id="website" >
+                        <div class="container px-5 py-3" >
+                            <div class="row justify-content-md-center" >
+                                <div class="col-12 text-center mb-5 mt-3">
+                                <h5 class="text-main-2">Full Stack Web Developer</h5>
+                                <h2 class="">WEBSITE DEVELOP</h2>
+                                <hr>
                                 </div>
-            
-                                <div class="col-6 p-3">
-                                    <h4 class="text-main-2">Badan Keuangan Bukittinggi</h4>
-                                    <p>I am is single developer who made this website</p>
-                                </div>
-            
-                                
-                            </div>
-                        </div>
-            
-            
-                        <div class="col-12 mb-5">
-                            <div class="row">
-
-                                <div class="col-5">
-                                    <img src="/assets/img/portfolio/website/web_echamp.png" alt="" class="img-normal">
-                                </div>
-            
-                                <div class="col-7 p-3">
-                                    <h4 class="text-main-2">ECHAMP.ID</h4>
-                                    <p>I am is single developer who made this website</p>
-                                    <a href="https://echamp.id/" class="btn btn-main-2" target="_blank">Open Website</a>
-                                </div>
-            
-                                
-                            </div>
-                        </div>
-            
-                        
-            
-                      </div>
-                    </div>
-                </section>
-            
-            
-                <section class="page-android " id="android" >
-                    <div class="container p-5" >
-                      <div class="row">
-                        <div class="col-12 text-center mb-5 mt-3">
-                          <h5 class="text-main-2">Full Stack Android Developer</h5>
-                          <h2 class="">ANDROID DEVELOP</h2>
-                          <hr>
-                        </div>
-            
-                        <div class="col-12 mb-5">
-                            <div class="row px-5 justify-content-md-center">
-            
-                                <div class="col-5">
-                                    <div class="video-container ">
-                                        <iframe src="https://www.youtube.com/embed/sjrpUE_yS0U" ></iframe>
-                                    </div>
-                                    <!-- <img src="https://media.discordapp.net/attachments/840992279703584818/840996754815057940/unand-link.jpg" alt="" class="img-normal"> -->
-                                </div>
-                                
-                                <div class="col-7 px-4">
-                                    <h4 class="text-main-2">UNAND Link</h4>
-                                    <p>I am is single developer who made this website</p>
-                                </div>
-                                
-                                <!-- <div class="col-12">
-                                    <img src="https://media.discordapp.net/attachments/840992279703584818/840996409578618900/Screenshot_2021-05-09_235851.png" alt="" class="img-normal">
-                                </div> -->
-            
-                                <!-- <div class="col-8 mt-5  ">
-                                    <div class="video-container ">
-                                        <iframe src="https://www.youtube.com/embed/sjrpUE_yS0U" ></iframe>
-                                    </div>
-                                </div> -->
-                                
-                            </div>
-                        </div>
-            
-                        
-            
-                      </div>
-                    </div>
-                </section>
-                
-                
-                
-            
-            
-            
-                <section class="page-ai bg-main-secondary " id="ai" >
-                    <div class="container p-5" >
-                      <div class="row">
-                        <div class="col-12 text-center mb-5 mt-3">
-                          <h5 class="text-main-2">My Artificial Intelligence</h5>
-                          <h2 class="">ARTIFICIAL INTELLIGENCE (AI)</h2>
-                          <hr>
-                        </div>
-            
-                        <div class="col-12 mb-5">
-                            <div class="row px-5 justify-content-md-center">
-            
-                                <div class="col-5 mb-3">
-                                    <div class="video-container ">
-                                        <iframe src="https://www.youtube.com/embed/8PZz6eFGpL8" ></iframe>
-                                    </div>
-                                    <!-- <img src="https://media.discordapp.net/attachments/665781746440339486/833230366634016818/capsule_main.jpg" alt="" class="img-normal"> -->
-                                </div>
-                                
-                                <div class="col-7 px-3">
-                                    <h4 class="text-main-2">Communicate With AI</h4>
-                                    <p>I am is single developer who made this game</p>
-                                    <!-- <a href=https://store.steampowered.com/app/1612220/Project_to_Escape" class="btn btn-main-2" target="_blank">Open Detail</a> -->
-                                </div>
-                                
-                            </div>
-                        </div>
-            
-                      </div>
-                    </div>
-                </section>
-
-
-                <section class="page-game bg" id="game" >
-                    <div class="container p-5" >
-                      <div class="row">
-                        <div class="col-12 text-center mb-5 mt-3">
-                          <h5 class="text-main-2">My Game Developed</h5>
-                          <h2 class="">GAME DEVELOP</h2>
-                          <hr>
-                        </div>
-            
-                        <div class="col-12 mb-5">
-                            <div class="row px-5 justify-content-md-center">
-            
-                                <div class="col-4 mb-3">
-                                    <img src="https://media.discordapp.net/attachments/665781746440339486/833230366634016818/capsule_main.jpg" alt="" class="img-normal">
-                                </div>
-                                
-                                <div class="col-8 px-3">
-                                    <h4 class="text-main-2">Project to Escape</h4>
-                                    <p>I am is single developer who made this game</p>
-                                    <a href=https://store.steampowered.com/app/1612220/Project_to_Escape" class="btn btn-main-2" target="_blank">Open Detail</a>
-                                </div>
-                                
-                                <div class="col-12 text-center mt-4">
-                                    <h5>GALERY FOR THIS PROJECT</h5>
-                                    <hr>
-            
+                    
+                                <div class="col-12 mb-5">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <img src="https://media.discordapp.net/attachments/665781746440339486/835009478641844224/art-workingspace-original.jpg" alt="" class="img-normal">
+                    
+                                        <div class="col-5">
+                                            <img src="/assets/img/portfolio/website/web_keuangan.png" alt="" class="img-normal">
                                         </div>
-                                        <div class="col-4">
-                                            <img src="https://cdn.discordapp.com/attachments/786635417918504971/836316888072978492/Lobby_FPS30_DPI72_500p.gif" alt="" class="img-normal">
+                    
+                                        <div class="col-6 p-3">
+                                            <h4 class="text-main-2">Badan Keuangan Bukittinggi</h4>
+                                            <p>I am is single developer who made this website</p>
                                         </div>
-                                        <div class="col-4">
-                                            <img src="https://media.discordapp.net/attachments/665781746440339486/872464419311996928/unknown.png?width=1193&height=671" alt="" class="img-normal">
+                    
+                                        
+                                    </div>
+                                </div>
+                    
+                    
+                                <div class="col-12 mb-5">
+                                    <div class="row">
+
+                                        <div class="col-5">
+                                            <img src="/assets/img/portfolio/website/web_echamp.png" alt="" class="img-normal">
                                         </div>
+                    
+                                        <div class="col-7 p-3">
+                                            <h4 class="text-main-2">ECHAMP.ID</h4>
+                                            <p>I am is single developer who made this website</p>
+                                            <a href="https://echamp.id/" class="btn btn-main-2" target="_blank">Open Website</a>
+                                        </div>
+                    
                                         
                                     </div>
                                 </div>
                             </div>
                         </div>
-            
-                        
-            
-                      </div>
-                    </div>
-                </section>
-            
-            
-                <section class="page-ai bg-main-secondary" id="3d_design" >
-                    <div class="container p-5" >
-                      <div class="row">
-                        <div class="col-12 text-center mb-5 mt-3">
-                          <h5 class="text-main-2">My 3D Design</h5>
-                          <h2 class="">3D Design</h2>
-                          <hr>
+                    </section>
+                
+                
+                    <section class="page-android " id="android" >
+                        <div class="container px-5 py-3" >
+                            <div class="row">
+                                <div class="col-12 text-center mb-5 mt-3">
+                                <h5 class="text-main-2">Full Stack Android Developer</h5>
+                                <h2 class="">ANDROID DEVELOP</h2>
+                                <hr>
+                                </div>
+                    
+                                <div class="col-12 mb-5">
+                                    <div class="row px-5 justify-content-md-center">
+                    
+                                        <div class="col-5">
+                                            <div class="video-container ">
+                                                <iframe src="https://www.youtube.com/embed/sjrpUE_yS0U" ></iframe>
+                                            </div>
+                                            <!-- <img src="https://media.discordapp.net/attachments/840992279703584818/840996754815057940/unand-link.jpg" alt="" class="img-normal"> -->
+                                        </div>
+                                        
+                                        <div class="col-7 px-4">
+                                            <h4 class="text-main-2">UNAND Link</h4>
+                                            <p>I am is single developer who made this website</p>
+                                        </div>
+                                        
+                                        <!-- <div class="col-12">
+                                            <img src="https://media.discordapp.net/attachments/840992279703584818/840996409578618900/Screenshot_2021-05-09_235851.png" alt="" class="img-normal">
+                                        </div> -->
+                    
+                                        <!-- <div class="col-8 mt-5  ">
+                                            <div class="video-container ">
+                                                <iframe src="https://www.youtube.com/embed/sjrpUE_yS0U" ></iframe>
+                                            </div>
+                                        </div> -->
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-            
-                        <div class="col-12 mb-5">
-                            <div class="row px-5 justify-content-md-center">
-            
-                                <div class="col-12 mb-3">
-                                    <div class="row">
-                                        <div class="col-4 mb-3">
-                                            <img src="https://media.discordapp.net/attachments/665781746440339486/746788337427284089/unknown.png" alt="" class="img-normal">
+                    </section>
+                    
+                    
+                    
+                
+                
+                
+                    <section class="page-ai bg-main-secondary " id="ai" >
+                        <div class="container px-5 py-3" >
+                            <div class="row">
+                                <div class="col-12 text-center mb-5 mt-3">
+                                <h5 class="text-main-2">My Artificial Intelligence</h5>
+                                <h2 class="">ARTIFICIAL INTELLIGENCE (AI)</h2>
+                                <hr>
+                                </div>
+                    
+                                <div class="col-12 mb-5">
+                                    <div class="row px-5 justify-content-md-center">
+                    
+                                        <div class="col-5 mb-3">
+                                            <div class="video-container ">
+                                                <iframe src="https://www.youtube.com/embed/8PZz6eFGpL8" ></iframe>
+                                            </div>
+                                            <!-- <img src="https://media.discordapp.net/attachments/665781746440339486/833230366634016818/capsule_main.jpg" alt="" class="img-normal"> -->
                                         </div>
-                                        <div class="col-4 mb-3">
-                                            <img src="https://media.discordapp.net/attachments/665781746440339486/746761963790401657/unknown.png" alt="" class="img-normal">
-                                        </div>
-                                        <div class="col-4 mb-3">
-                                            <img src="https://media.discordapp.net/attachments/665781746440339486/746788114453757962/unknown.png" alt="" class="img-normal">
-                                        </div>
-                                        <div class="col-4 mb-3">
-                                            <img src="https://media.discordapp.net/attachments/671812077618462721/672204670512398341/unknown.png" alt="" class="img-normal">
-                                        </div>
-                                        <div class="col-4 mb-3">
-                                            <img src="https://media.discordapp.net/attachments/671812077618462721/672205613232816138/unknown.png" alt="" class="img-normal">
-                                        </div>
-                                        <div class="col-4 mb-3">
-                                            <img src="https://media.discordapp.net/attachments/665781746440339486/835009478641844224/art-workingspace-original.jpg" alt="" class="img-normal">
+                                        
+                                        <div class="col-7 px-3">
+                                            <h4 class="text-main-2">Communicate With AI</h4>
+                                            <p>I am is single developer who made this game</p>
+                                            <!-- <a href=https://store.steampowered.com/app/1612220/Project_to_Escape" class="btn btn-main-2" target="_blank">Open Detail</a> -->
                                         </div>
                                         
                                     </div>
                                 </div>
-            
+                    
                             </div>
                         </div>
-            
-                      </div>
-                    </div>
-                </section>
-
-              </div>
-            
+                    </section>
 
 
+                    <section class="page-game bg" id="game" >
+                        <div class="container px-5 py-3" >
+                            <div class="row">
+                                <div class="col-12 text-center mb-5 mt-3">
+                                <h5 class="text-main-2">My Game Developed</h5>
+                                <h2 class="">GAME DEVELOP</h2>
+                                <hr>
+                                </div>
+                    
+                                <div class="col-12 mb-5">
+                                    <div class="row px-5 justify-content-md-center">
+                    
+                                        <div class="col-4 mb-3">
+                                            <img src="https://media.discordapp.net/attachments/665781746440339486/833230366634016818/capsule_main.jpg" alt="" class="img-normal">
+                                        </div>
+                                        
+                                        <div class="col-8 px-3">
+                                            <h4 class="text-main-2">Project to Escape</h4>
+                                            <p>I am is single developer who made this game</p>
+                                            <a href=https://store.steampowered.com/app/1612220/Project_to_Escape" class="btn btn-main-2" target="_blank">Open Detail</a>
+                                        </div>
+                                        
+                                        <div class="col-12 text-center mt-4">
+                                            <h5>GALERY FOR THIS PROJECT</h5>
+                                            <hr>
+                    
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <img src="https://media.discordapp.net/attachments/665781746440339486/835009478641844224/art-workingspace-original.jpg" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="https://cdn.discordapp.com/attachments/786635417918504971/836316888072978492/Lobby_FPS30_DPI72_500p.gif" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="https://media.discordapp.net/attachments/665781746440339486/872464419311996928/unknown.png?width=1193&height=671" alt="" class="img-normal">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                
+                    <section class="page-ai bg-main-secondary" id="2d_design" >
+                        <div class="container px-5 py-3" >
+                            <div class="row">
+                                <div class="col-12 text-center mb-5 mt-3">
+                                <h5 class="text-main-2">My Design</h5>
+                                <h2 class="">2D Design</h2>
+                                <hr>
+                                </div>
+                    
+                                <div class="col-12 mb-5">
+                                    <div class="row px-5 justify-content-md-center">
+                    
+                                        <div class="col-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-6 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/840992279703584818/840998396042149898/Screenshot_2021-05-09_235551.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-6 mb-3">
+                                                    <img src="https://cdn.discordapp.com/attachments/665781746440339486/929490564309725234/beta-turnament-poster.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-6 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/840992279703584818/840998389566537728/echampion_1.jpg" alt="" class="img-normal">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </section>
 
-            
-      
-            
-          </main>
+                    <section class="page-ai bg-main-secondary" id="3d_design" >
+                        <div class="container px-5 py-3" >
+                            <div class="row">
+                                <div class="col-12 text-center mb-5 mt-3">
+                                <h5 class="text-main-2">My 3D Design</h5>
+                                <h2 class="">3D Design</h2>
+                                <hr>
+                                </div>
+                    
+                                <div class="col-12 mb-5">
+                                    <div class="row px-5 justify-content-md-center">
+                    
+                                        <div class="col-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-4 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/665781746440339486/746788337427284089/unknown.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-4 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/665781746440339486/746761963790401657/unknown.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-4 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/665781746440339486/746788114453757962/unknown.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-4 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/671812077618462721/672204670512398341/unknown.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-4 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/671812077618462721/672205613232816138/unknown.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-4 mb-3">
+                                                    <img src="https://media.discordapp.net/attachments/665781746440339486/835009478641844224/art-workingspace-original.jpg" alt="" class="img-normal">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="page-ai bg-main-secondary" id="uiux" >
+                        <div class="container px-5 py-3" >
+                            <div class="row">
+                                <div class="col-12 text-center mb-5 mt-3">
+                                <h5 class="text-main-2">My Design</h5>
+                                <h2 class="">UI/UX Design</h2>
+                                <hr>
+                                </div>
+                    
+                                <div class="col-12 mb-5">
+                                    <div class="row px-5 justify-content-md-center">
+                    
+                                        <div class="col-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <img src="/assets/img/portfolio/UIUX/ux_playmate.png" alt="" class="img-normal">
+                                                </div>
+                                                <div class="col-12 mb-3">
+                                                    <img src="/assets/img/portfolio/UIUX/ux_gibite.png" alt="" class="img-normal">
+                                                </div>
+                                                <!-- <div class="col-12 mb-3">
+                                                    <img src="/assets/img/portfolio/UIUX/ux_bradcaster.png" alt="" class="img-normal">
+                                                </div> -->
+                                                
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                
+
+                
+            </main>
         </div>
       </div>
 
