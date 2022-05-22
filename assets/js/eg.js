@@ -73,5 +73,5 @@ document.addEventListener('keydown', (event) => {
 }, false);
 
 function eg(){
-    window.location.href = "https://www.linkedin.com/in/harlan-setia-r-a2320680/";
+    window.location.href = "https://harlansr.github.io/";
 }
