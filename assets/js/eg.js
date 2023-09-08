@@ -4,7 +4,7 @@ document.addEventListener('keydown', (event) => {
     let code = event.code;
     // Alert the key name and key code on keydown
     // alert(`Key pressed ${name} \r\n Key code value: ${code}`);
-    console.log(keyPart);
+    // console.log(keyPart);
     switch (keyPart) {
         case 0:
             if(name == 'D'){
