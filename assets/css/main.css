@@ -7,7 +7,7 @@
     --color-main-2: #F5AF31;  
 
     --color-main-secondary: #2F2F2F;  
-    --color-bg-skills: #6d6d7b;  
+    --color-bg-skills: #444444;  
     --color-text-shadow:var(--color-main);
     
     --color-white : #ffffff;
@@ -51,8 +51,13 @@ p{
 .masthead .img-masterhead{
     /* position: relative;  */
     /* left: -160px; */
-    width: auto;
-    height: 100%; 
+    width: 100%;
+    height: auto; 
+    max-height: 500px;
+    /* max-height: 100%; */
+    object-fit: cover;
+    object-position: top center;
+    /* background-repeat: no-repeat; */
 }
 
 /* @media (max-width: 480px){
