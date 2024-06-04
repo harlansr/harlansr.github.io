@@ -7,6 +7,7 @@
     --color-main-2: #F5AF31;  
 
     --color-main-secondary: #2F2F2F;  
+    --color-bg-skills: #6d6d7b;  
     --color-text-shadow:var(--color-main);
     
     --color-white : #ffffff;
@@ -29,6 +30,12 @@ p{
 .img-normal{
     width: 100% !important;
     height: auto !important;
+}
+.img-logo{
+    width: 100px;
+    height: auto ;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* .masthead{
@@ -86,6 +93,9 @@ p{
 }
 .page-services{
     background-color: var(--color-main-secondary);
+}
+.page-skills{
+    background-color: var(--color-bg-skills);
 }
 .page-portfolio{
     background-color: var(--color-main-secondary);
