@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    const userInput = document.getElementById('user-input');
+
+    // Trigger sendMessage when 'Enter' key is pressed in the input
+    userInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+            // console.log(userInput.value.trim())
+        }
+    });
+});
+
+function setQuestion(question) {
+    const userInput = document.getElementById('user-input');
+    userInput.value = question; // Set the question in the input field
+    sendMessage(); // Call sendMessage to send the question
+}
+
 async function sendMessage() {
     const userInput = document.getElementById('user-input');
     const message = userInput.value.trim();
