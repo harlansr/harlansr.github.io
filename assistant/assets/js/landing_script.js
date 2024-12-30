@@ -69,7 +69,21 @@ async function sendMessage() {
         // }
 
         // console.log(fullResponse);
-        responseOutput.innerHTML = marked.parse(answer);
+        if(data.accuracy>0.9){
+            responseOutput.innerHTML = marked.parse(answer);
+        }else{
+            responseOutput.innerHTML = `
+            I'm sorry, I can only answer questions about <b>Harlan</b>. If you have any questions about <b>Harlan</b>, feel free to ask! 😊
+            <br>
+            <br>
+            <div id="suggestions-container" class="">
+                <p class="fw-bold text-secondary">Suggested Questions:</p>
+                <button class="btn btn-outline-secondary btn-sm mb-1 me-1" onclick="setQuestion('Tell me about yourself')">Tell me about yourself</button>
+                <button class="btn btn-outline-secondary btn-sm mb-1 me-1" onclick="setQuestion('What\'s your hobby?')">What's your hobby?</button>
+                <button class="btn btn-outline-secondary btn-sm mb-1" onclick="setQuestion('I want to hire you')">I want to hire you</button>
+            </div>`;
+            
+        }
 
         sendButton.innerHTML = '<i class="bi bi-send-fill"></i>';
         sendButton.disabled = false;
@@ -85,7 +99,7 @@ async function sendMessage() {
 ### Whats wrong?
 - **AI server** is under maintenance
 - or something else
-
+------
 **ERROR:** `+error;
 
         responseOutput.innerHTML = marked.parse(fullResponse);
