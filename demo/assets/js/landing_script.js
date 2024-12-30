@@ -38,11 +38,12 @@ async function sendMessage() {
     let fullResponse = '';  // Variable to accumulate the actual response
 
     try {
-        // Fetch API with streaming response
-        const response = await fetch('https://mazis-resume-chatbot.azurewebsites.net/predict', {
+        // const response = await fetch('https://mazis-resume-chatbot.azurewebsites.net/predict', {
+        const response = await fetch('https://portfolio.paraweh.com/ai', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'X-SIGNATURE': 'PRIVATE'
             },
             body: JSON.stringify({ input: message }),
         });
@@ -52,39 +53,36 @@ async function sendMessage() {
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
 
-        // Process each streamed chunk
         while (true) {
             const { done, value } = await reader.read();
             if (done) break;
-
-            // Decode and process the chunk
             const chunk = decoder.decode(value, { stream: true });
-
-            // Skip the "INFO: getting information..." message
             if (chunk.includes("INFO: getting information...")) {
                 continue;
             }
-
-            // Append to the accumulated response
             fullResponse += chunk;
-
-            // Show partial response (without parsing as Markdown for now)
-            responseOutput.textContent = fullResponse;  // Show plain text as it streams in
+            responseOutput.textContent = fullResponse;
         }
 
-        // Once complete, parse the entire accumulated response as Markdown
+        console.log(fullResponse);
         responseOutput.innerHTML = marked.parse(fullResponse);
 
-        // Reset button state
         sendButton.innerHTML = '<i class="bi bi-send-fill"></i>';
         sendButton.disabled = false;
 
     } catch (error) {
         // Handle errors and reset button state
-        sendButton.innerHTML = 'Send!';
+        sendButton.innerHTML = '<i class="bi bi-send-fill"></i>';
         sendButton.disabled = false;
         console.error('Error:', error);
-        responseOutput.textContent = 'Sorry, something went wrong. Please try again later.';
+        // responseOutput.textContent = 'Sorry, something went wrong. Please try again later.';
+        const fullResponse = `Sorry, something went wrong. Please try again later.
+        
+### Whats wrong?
+- **AI server** is under maintenance
+- or something else`;
+
+        responseOutput.innerHTML = marked.parse(fullResponse);
     }
 
     // Clear the input
