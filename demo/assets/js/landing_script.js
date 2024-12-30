@@ -39,7 +39,8 @@ async function sendMessage() {
 
     try {
         // const response = await fetch('https://mazis-resume-chatbot.azurewebsites.net/predict', {
-        const response = await fetch('https://portfolio.paraweh.com/ai', {
+        console.log("INPUT: ",message);
+        const response = await fetch('https://portfolio.paraweh.com/api/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,24 +49,27 @@ async function sendMessage() {
             body: JSON.stringify({ input: message }),
         });
 
-        if (!response.body) throw new Error('ReadableStream not supported in this browser.');
+        const data = await response.json();
+        const answer = data.answer;
+        console.log("RESPONSE: ",answer);
 
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder();
+        // if (!response.body) throw new Error('ReadableStream not supported in this browser.');
+        // const reader = response.body.getReader();
+        // const decoder = new TextDecoder();
 
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            const chunk = decoder.decode(value, { stream: true });
-            if (chunk.includes("INFO: getting information...")) {
-                continue;
-            }
-            fullResponse += chunk;
-            responseOutput.textContent = fullResponse;
-        }
+        // while (true) {
+        //     const { done, value } = await reader.read();
+        //     if (done) break;
+        //     const chunk = decoder.decode(value, { stream: true });
+        //     if (chunk.includes("INFO: getting information...")) {
+        //         continue;
+        //     }
+        //     fullResponse += chunk;
+        //     responseOutput.textContent = fullResponse;
+        // }
 
-        console.log(fullResponse);
-        responseOutput.innerHTML = marked.parse(fullResponse);
+        // console.log(fullResponse);
+        responseOutput.innerHTML = marked.parse(answer);
 
         sendButton.innerHTML = '<i class="bi bi-send-fill"></i>';
         sendButton.disabled = false;
