@@ -53,8 +53,8 @@ async function sendMessage() {
         const answer = data.answer;
         console.log("RESPONSE: ",answer);
 
-        // if (!response.body) throw new Error('ReadableStream not supported in this browser.');
-        // const reader = response.body.getReader();
+        if (!response.body) throw new Error('ReadableStream not supported in this browser.');
+        const reader = response.body.getReader();
         // const decoder = new TextDecoder();
 
         // while (true) {
@@ -84,7 +84,9 @@ async function sendMessage() {
         
 ### Whats wrong?
 - **AI server** is under maintenance
-- or something else`;
+- or something else
+
+**ERROR:** `+error;
 
         responseOutput.innerHTML = marked.parse(fullResponse);
     }
