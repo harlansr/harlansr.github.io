@@ -1,313 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harlan SR | Portofolio</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
-    <link rel="stylesheet" href="/assets/css/main.css">
-    
-
-    <title>Portfolio HarlanSR</title>
-
-    
-  </head>
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark position-absolute px-5">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">PORTFOLIO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-            
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li> -->
-          </ul>
-          <form class="d-flex">
-            <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button> -->
-          </form>
+</head>
+<!-- <body class="d-flex flex-column min-vh-100"> -->
+<body>
+    <div class="container my-3 mb-3">
+        <div class="row">
+            <ul class="nav nav-underline justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black-50" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black-50" href="project.html">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black-50" href="contact.html">Contact</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
+    </div>
+    <hr>
 
-    <header class="masthead bg-color-main img-background ">
-      <div class=" bg-main" >
-        <div class="row" >
-          <div class="col-7 align-self-center p-5 text-masterhead" style="z-index:1000; ">
-            <div class="row justify-content-center">
-              <div class="col-8">
-                <h6>Hello</h6>
-                <h1 class="text-main-2 text-masterhead">I'm Harlan</h1>
-                <h5>Full Stack Developer</h5>
-                <a href="#contact" class="btn btn-main-2 mt-2" >CONTACT ME</a>
-              </div>
+    <div class="container d-flex flex-column align-items-center text-center flex-grow-1 justify-content-center">
+        <!-- Large Heading -->
+        <h1 class="display-1 ">Hi, I'm <span class="text-name fw-bold">Harlan!</span>👋🏼</h1>
+        <h3 class="display-5 fw-bold text-black">A Software Enginer</h1>
+        <p class="fs-5 text-black-50">this is my AI Assistant created and trained by my self without any third-party AI</p>
+
+        <!-- Chat Input and Button -->
+        <div class="input-group my-4" style="max-width: 600px; width: 100%;">
+            <input id="user-input" type="text" class="form-control rounded-pill border-2" placeholder="Ask to my AI Assistant 🤵" aria-label="User input">
+            <button class="btn btn-light border-2 rounded-circle" type="button" onclick="sendMessage()" id="send-button">
+                <i class="bi bi-send-fill"></i>
+            </button>
+        </div>
+
+        <!-- <div id="response-output" class="bg-light text-muted p-3 rounded mb-3 text-start" style="max-width: 600px; width: 100%; max-height: 40vh; overflow-y: auto;"> -->
+        <div id="response-output" class="bg-light text-muted p-3 rounded mb-3 text-start" style="max-width: 600px; width: 100%; overflow-y: auto;">
+          <!-- <p class="mb-2"></p> -->
+      
+            <!-- Suggestions Container -->
+            <div id="suggestions-container" class="">
+                <p class="fw-bold text-secondary">Suggested Questions:</p>
+                <button class="btn btn-outline-secondary btn-sm mb-1 me-1" onclick="setQuestion('Tell me about yourself')">Tell me about yourself</button>
+                <button class="btn btn-outline-secondary btn-sm mb-1 me-1" onclick="setQuestion('What\'s your hobby?')">What's your hobby?</button>
+                <button class="btn btn-outline-secondary btn-sm mb-1" onclick="setQuestion('I want to hire you')">I want to hire you</button>
             </div>
-          </div>
-          <div class="col-5 bg-main-2" >
-            <img src="/assets/img/harlan_t.png" class="img-masterhead" style="z-index:9;">
-          </div>
-          
-      </div>
+        </div>
+      
     </div>
-    </header>
 
-  
+    <!-- Bootsrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-  <!-- <section class="page-about " id="about" >
-    <div class="container p-5" >
-      <div class="row">
-        <div class="col-md-4 col-sm-12 align-self-center d-flex justify-content-end">
-          <div class="mx-4" >
-            <img src="/assets/img/harlan_r.jpg" class="mb-3" style="width: 100%; height: auto;">
-          </div>
-        </div>
-        <div class="col-md-8 col-sm-12">
-          <h4>About Me</h4>
-          <hr class="text-main-2" width="100px" style="height:2px;border-width:0;">
-          <p>My name is Harlan Setia Rahendra, but you can call me Harlan, and I am from 
-            Bukittinngi, it’s city in West Sumatera, Indonesia<br><br>
-            I like to learn some thing new, especially those related to technology, That curiosity 
-            made me master a lot of professional software on computers such as in the field of 
-            graphic design, 3d design, video editing, micro controller and even programming, I 
-            learned all of that 98% by myself, I am forced to study on my own because I have a 
-            unique interest from my social environment, and no place to ask makes me learn it 
-            myself via the internet<br><br>
-            I graduated from Economics at Andalas University, it is very contrary to my hobby in technology, but I do not regret my 
-            decision to enter this majors because I am also interested in understanding the way people think, especially in the field of 
-            consuming a product, that's where my marketing skills are sharpened.</p>
-        </div>
-      </div>
-        
-    </div>
-  </section> -->
-
-  <section class="page-services " id="services"  style="z-index:10;">
-    <div class="container p-5" >
-      <div class="row">
-        <div class="col-12 text-center mb-5 mt-3">
-          <h5 class="text-main-2">Services</h5>
-          <h2 class="">What I Am Great At</h2>
-          <p>I can do many things, but this is the best I can do</p>
-        </div>
-
-        <div class="col-md-4 col-sm-12 mb-4">
-          <div class="card bg-card text-center p-3">
-            <h5>ARTIFICIAL INTELLIGENCE</h5>
-            <P>I'am can make some AI</P>
-            <a href="/portfolio#ai" class="btn btn-outline-main">MY PORTFOLIO</a>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 mb-4">
-          <div class="card bg-card text-center p-3">
-            <h5>WEB PROGRAMING</h5>
-            <P>I'am work as Full Stack Web developer</P>
-            <a href="/portfolio#website" class="btn btn-outline-main">MY PORTFOLIO</a>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 mb-4">
-          <div class="card bg-card text-center p-3">
-            <h5>MOBILE DEVELOPER</h5>
-            <P>I'am work as Full Stack mobile developer</P>
-            <a href="/portfolio#mobile" class="btn btn-outline-main">MY PORTFOLIO</a>
-          </div>
-        </div>
-        
-        
-      </div>
-    </div>
-  </section>
-
-  <section class="page-skills" id="skills" >
-    <div class="container p-5" >
-      <div class="row">
-        <div class="col-12 text-center mb-3 mt-3">
-          <h5 class="text-main-2">SKILLS</h5>
-          <h2 class="">Language</h2>
-        </div>
-        
-        <div class="col-12 text-center">
-          <!-- C, C++, C#, CSS, Dart, Go Language, HTML, Java, JavaScript, PHP, Python, Sql, XML -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png" alt="" class="img-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png" alt="" class="img-logo">
-          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/c-sharp-programming-language-icon.png" alt="" class="img-logo">
-          <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="" class="img-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Dart_programming_language_logo_icon.svg/2048px-Dart_programming_language_logo_icon.svg.png" alt="" class="img-logo" >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png" alt="" class="img-logo" >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="" class="img-logo" >
-          <img src="https://cdn.iconscout.com/icon/free/png-256/free-java-60-1174953.png?f=webp" alt="" class="img-logo" >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="" class="img-logo" >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" alt="" class="img-logo" >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="" class="img-logo" >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="" class="img-logo" >
-          <img src="https://cdn-icons-png.freepik.com/512/9496/9496555.png" alt="" class="img-logo" >
-        </div>
-
-
-        <div class="col-12 text-center mb-3 mt-5">
-          <!-- <h5 class="text-main-2">SKILLS</h5> -->
-          <h2 class="">Fremwork</h2>
-        </div>
-        <div class="col-12 text-center">
-          <!-- ASP.Net, ElectronJS, ExpressJS, Flutter, Laravel, LeafletJS, NodeJS, ReactJS, React NartiveL -->
-          <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/ASP.NET_logo.jpg" alt="" class="img-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/2048px-Electron_Software_Framework_Logo.svg.png" alt="" class="img-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flutter_logo.svg/2048px-Flutter_logo.svg.png" alt="" class="img-logo">
-          <img src="https://cdn.rawgit.com/go-chi/chi/master/_examples/chi.svg" alt="" class="img-logo">
-          <img src="https://softwareinfosys.com/wp-content/uploads/2023/10/laravel-logo.webp" alt="" class="img-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Leaflet_logo.svg/2560px-Leaflet_logo.svg.png" alt="" class="img-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" alt="" class="img-logo">
-          <img src="https://static-00.iconduck.com/assets.00/react-original-wordmark-icon-1679x2048-hjal07w8.png" alt="" class="img-logo">
-          <img src="https://www.iteachrecruiters.com/img/blog/logo/react-native.png" alt="" class="img-logo">
-        </div>
-
-        <div class="col-12 text-center mb-3 mt-5">
-          <!-- <h5 class="text-main-2">SKILLS</h5> -->
-          <h2 class="">Database</h2>
-        </div>
-        <div class="col-12 text-center">
-          <!-- PostgreSQL, MongoDB, MySQL, SQL Server, SQL Lite, Firebase -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/540px-Postgresql_elephant.svg.png" alt="" class="img-logo">
-          <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png" alt="" class="img-logo">
-          <img src="https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.png" alt="" class="img-logo">
-          <img src="https://aidanfinn.com/wp-content/uploads/2017/09/SQL-Server-Logo-1024x832.png" alt="" class="img-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/2560px-SQLite370.svg.png" alt="" class="img-logo">
-          <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/firebase_logo_icon_171157.png" alt="" class="img-logo">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- <section class="page-portfolio " id="portfolio" >
-    <div class="container p-5" >
-      <div class="row">
-        <div class="col-12 text-center mb-5 mt-3">
-          <h5 class="text-main-2">PORTFOLIO</h5>
-          <h2 class="">My Collection</h2>
-          <p>I really like to try different things, that's why I have a lot of portfolios, but for now I'm trying to focus on becoming a web programmer</p>
-        </div>
-        
-        <div class="col-12 text-center">
-
-          <div class="col-12 mb-3">
-            <div class="row">
-              <div class="col-4 mb-3">
-                  <img src="/assets/img/portfolio/website/web_keuangan.png" alt="" class="img-normal">
-              </div>
-              <div class="col-4 mb-3">
-                <img src="/assets/img/portfolio/website/web_echamp.png" alt="" class="img-normal">
-              </div>
-              <div class="col-4 mb-3">
-                <img src="https://media.discordapp.net/attachments/665781746440339486/835009478641844224/art-workingspace-original.jpg" alt="" class="img-normal">
-              </div>
-              <div class="col-4 mb-3">
-                <img src="https://media.discordapp.net/attachments/840992279703584818/840998396042149898/Screenshot_2021-05-09_235551.png" alt="" class="img-normal">
-              </div>
-              <div class="col-4 mb-3">
-                  <img src="https://media.discordapp.net/attachments/665781746440339486/746761963790401657/unknown.png" alt="" class="img-normal">
-              </div>
-              
-              <div class="col-4 mb-3">
-                <div class="video-container ">
-                  <iframe src="https://www.youtube.com/embed/sjrpUE_yS0U" ></iframe>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-
-          <a href="/portfolio" class="btn btn-main-2">View All Portfolios</a>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  
-  
-
-  <section class="page-contact " id="contact" >
-    <div class="container p-5" >
-      <div class="row">
-        <div class="col-12 text-center mb-5 mt-3">
-          <h5 class="text-main-2">CONTACT</h5>
-          <h2 class="">Ways To Contact Me</h2>
-          <p>for professional reasons you can contact me via the contact below</p>
-        </div>
-        
-        <div class="col-12 text-center">
-          <div class="row justify-content-center">
-
-            <div class="col-md-7 col-sm-12 mb-3">
-              <div class="card bg-card rounded p-3">
-                <span><i class="bi bi-envelope"></i> harlan.setia@gmail.com</span>
-              </div>
-            </div>
-
-            <div class="col-md-7 col-sm-12 mb-3 text-white">
-              <a href="https://www.linkedin.com/in/harlansr/" target="_blank" class="text-decoration-none">
-                <div class="card bg-card rounded p-3">
-                  <span><i class="bi bi-linkedin"></i> LinkedIn</span>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-7 col-sm-12 mb-3 text-white">
-              <a href="https://github.com/harlansr" target="_blank" class="text-decoration-none">
-                <div class="card bg-card rounded p-3">
-                  <span><i class="bi bi-github"></i> GitHub</span>
-                </div>
-              </a>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.5"></script>
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-  </body>
+    <script src="assets\js\landing_script.js"></script>
+</body>
 </html>
