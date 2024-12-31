@@ -1,14 +1,30 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const userInput = document.getElementById('user-input');
-
-    // Trigger sendMessage when 'Enter' key is pressed in the input
     userInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             sendMessage();
-            // console.log(userInput.value.trim())
         }
     });
 });
+
+let config = {};
+function detectConfig() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
+        config.device = "mobile"
+    } else {
+        config.device = "pc"
+    }
+
+    const userLanguage = navigator.language || navigator.userLanguage;
+    if (userLanguage.startsWith('id')) {
+        config.language = "id"
+    } else {
+        config.language = "en"
+    }
+}
+window.onload = detectConfig;
+
 
 function setQuestion(question) {
     const userInput = document.getElementById('user-input');
@@ -39,19 +55,21 @@ async function sendMessage() {
 
     try {
         // const response = await fetch('https://mazis-resume-chatbot.azurewebsites.net/predict', {
-        console.log("INPUT: ",message);
+        // console.log("INPUT: ",message);
         const response = await fetch('https://portfolio.paraweh.com/api/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-SIGNATURE': 'PRIVATE'
+                'X-SIGNATURE': 'PRIVATE',
+                'X-TIMESTAMP': Math.floor(Date.now() / 1000),
+                'X-PARTNER-ID': '3e2a2b86235d4396b3d9940d6b09dee1',
             },
             body: JSON.stringify({ input: message }),
         });
 
         const data = await response.json();
         const answer = data.answer;
-        console.log("RESPONSE: ",answer);
+        // console.log("RESPONSE: ",answer);
 
         // if (!response.body) throw new Error('ReadableStream not supported in this browser.');
         // const reader = response.body.getReader();
@@ -69,7 +87,7 @@ async function sendMessage() {
         // }
 
         // console.log(fullResponse);
-        if(data.accuracy>0.9){
+        if(data.accuracy>0.8){
             responseOutput.innerHTML = marked.parse(answer);
         }else{
             responseOutput.innerHTML = `
