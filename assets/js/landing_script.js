@@ -56,13 +56,15 @@ async function sendMessage() {
     try {
         // const response = await fetch('https://mazis-resume-chatbot.azurewebsites.net/predict', {
         // console.log("INPUT: ",message);
+        h_timestamp = Math.floor(Date.now() / 1000)
+        h_client_id = 'f496bf4066de4769a37c586eb61706b3'
+        h_signature = CryptoJS.HmacSHA512(`${h_timestamp}`, h_client_id)
+        h_signature_s = CryptoJS.enc.Base64.stringify(h_signature);
         const response = await fetch('https://portfolio.paraweh.com/api/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-SIGNATURE': 'PRIVATE',
-                'X-TIMESTAMP': Math.floor(Date.now() / 1000),
-                'X-PARTNER-ID': '3e2a2b86235d4396b3d9940d6b09dee1',
+                'X-SIGNATURE': `${h_client_id}.${h_signature_s}.${h_timestamp}`,
             },
             body: JSON.stringify({ input: message }),
         });
