@@ -2,7 +2,7 @@ const data = {
     education : {
         en: [
             {
-                name:"Andalas Univercity",
+                name:"Andalas University",
                 major: "Economics",
                 time: "2013-2024",
             },
