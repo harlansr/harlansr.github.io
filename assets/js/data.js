@@ -261,7 +261,7 @@ const data = {
                 tag:[ ]
             },
             {
-                name: "Resporant",
+                name: "Restoran",
                 type: "ui/ux",
                 image: "https://harlansr.github.io/assets/img/portfolio/UIUX/ux_restorant.png",
                 video: null,
