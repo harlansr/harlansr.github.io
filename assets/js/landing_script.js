@@ -114,11 +114,17 @@ async function sendMessage() {
         sendButton.disabled = false;
         console.error('Error:', error);
         // responseOutput.textContent = 'Sorry, something went wrong. Please try again later.';
-        const fullResponse = `Sorry, something went wrong. Please try again later.
+//         const fullResponse = `Sorry, something went wrong. Please try again later.
         
-### Whats wrong?
-- **AI server** is under maintenance
-- or something else
+// ### Whats wrong?
+// - **AI server** is under maintenance
+// - or something else
+// ------
+// **ERROR:** `+error;
+        const fullResponse = `
+        Sorry, it looks like the server is currently **inactive**. You can **ask Harlan** to activate the AI server.
+
+You can contact Harlan through the link: https://harlansr.github.io/contact.
 ------
 **ERROR:** `+error;
 
