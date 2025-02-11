@@ -121,12 +121,17 @@ async function sendMessage() {
 // - or something else
 // ------
 // **ERROR:** `+error;
-        const fullResponse = `
-        Sorry, it looks like the server is currently **inactive**. You can **ask Harlan** to activate the AI server.
-
-You can contact Harlan through the link: https://harlansr.github.io/contact.
+        const fullResponse = `Sorry, it looks like the server is currently **inactive**.
+        
+### Whats wrong?
+- The **AI server** is on **Harlan's laptop** and needs to be activated manually.
+- You can **contact Harlan** via the [Contact](/contact.html) tab.
 ------
 **ERROR:** `+error;
+//         const fullResponse = `Sorry, it looks like the server is currently inactive. You can ask Harlan to activate the AI server.
+// You can contact Harlan through the link: https://harlansr.github.io/contact.
+// ------
+// **ERROR:** `+error;
 
         responseOutput.innerHTML = marked.parse(fullResponse);
     }
